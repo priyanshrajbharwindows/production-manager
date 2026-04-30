@@ -19,7 +19,7 @@ interface RawMaterialsTableProps {
 
 export function RawMaterialsTable({ materials }: RawMaterialsTableProps) {
   return (
-    <div className="rounded-lg border border-border/50 bg-card">
+    <div className="rounded-xl glass-table overflow-hidden">
       <Table>
         <TableHeader>
           <TableRow className="hover:bg-transparent">

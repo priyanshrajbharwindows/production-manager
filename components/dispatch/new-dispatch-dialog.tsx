@@ -140,6 +140,7 @@ export function NewDispatchDialog({ batches }: NewDispatchDialogProps) {
                   required
                   min="1"
                   max={availableQuantity}
+                  className="glass-input"
                 />
               </div>
               <div className="grid gap-2">
@@ -150,6 +151,7 @@ export function NewDispatchDialog({ batches }: NewDispatchDialogProps) {
                   value={formData.dispatch_date}
                   onChange={(e) => setFormData({ ...formData, dispatch_date: e.target.value })}
                   required
+                  className="glass-input"
                 />
               </div>
             </div>
@@ -161,6 +163,7 @@ export function NewDispatchDialog({ batches }: NewDispatchDialogProps) {
                 value={formData.destination}
                 onChange={(e) => setFormData({ ...formData, destination: e.target.value })}
                 required
+                className="glass-input"
               />
             </div>
             <div className="grid grid-cols-2 gap-4">
@@ -171,6 +174,7 @@ export function NewDispatchDialog({ batches }: NewDispatchDialogProps) {
                   placeholder="e.g., MH-12-AB-1234"
                   value={formData.vehicle_number}
                   onChange={(e) => setFormData({ ...formData, vehicle_number: e.target.value })}
+                  className="glass-input"
                 />
               </div>
               <div className="grid gap-2">
@@ -180,6 +184,7 @@ export function NewDispatchDialog({ batches }: NewDispatchDialogProps) {
                   placeholder="Enter driver name"
                   value={formData.driver_name}
                   onChange={(e) => setFormData({ ...formData, driver_name: e.target.value })}
+                  className="glass-input"
                 />
               </div>
             </div>
@@ -190,6 +195,7 @@ export function NewDispatchDialog({ batches }: NewDispatchDialogProps) {
                 placeholder="Enter any notes..."
                 value={formData.notes}
                 onChange={(e) => setFormData({ ...formData, notes: e.target.value })}
+                className="glass-input min-h-[80px]"
               />
             </div>
           </div>

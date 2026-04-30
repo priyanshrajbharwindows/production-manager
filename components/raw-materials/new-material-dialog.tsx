@@ -95,6 +95,7 @@ export function NewMaterialDialog() {
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                   required
+                  className="glass-input"
                 />
               </div>
               <div className="grid gap-2">
@@ -105,6 +106,7 @@ export function NewMaterialDialog() {
                   value={formData.code}
                   onChange={(e) => setFormData({ ...formData, code: e.target.value })}
                   required
+                  className="glass-input"
                 />
               </div>
             </div>
@@ -117,6 +119,7 @@ export function NewMaterialDialog() {
                   value={formData.unit}
                   onChange={(e) => setFormData({ ...formData, unit: e.target.value })}
                   required
+                  className="glass-input"
                 />
               </div>
               <div className="grid gap-2">
@@ -129,6 +132,7 @@ export function NewMaterialDialog() {
                   value={formData.unit_cost}
                   onChange={(e) => setFormData({ ...formData, unit_cost: e.target.value })}
                   required
+                  className="glass-input"
                 />
               </div>
             </div>
@@ -142,6 +146,7 @@ export function NewMaterialDialog() {
                   placeholder="Enter quantity"
                   value={formData.current_stock}
                   onChange={(e) => setFormData({ ...formData, current_stock: e.target.value })}
+                  className="glass-input"
                 />
               </div>
               <div className="grid gap-2">
@@ -153,6 +158,7 @@ export function NewMaterialDialog() {
                   placeholder="Enter minimum"
                   value={formData.min_stock_level}
                   onChange={(e) => setFormData({ ...formData, min_stock_level: e.target.value })}
+                  className="glass-input"
                 />
               </div>
             </div>
@@ -163,6 +169,7 @@ export function NewMaterialDialog() {
                 placeholder="Enter description"
                 value={formData.description}
                 onChange={(e) => setFormData({ ...formData, description: e.target.value })}
+                className="glass-input min-h-[80px]"
               />
             </div>
           </div>

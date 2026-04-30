@@ -119,6 +119,7 @@ export function NewBatchDialog({ products }: NewBatchDialogProps) {
                 onChange={(e) => setFormData({ ...formData, quantity_planned: e.target.value })}
                 required
                 min="1"
+                className="glass-input"
               />
             </div>
             <div className="grid gap-2">
@@ -128,6 +129,7 @@ export function NewBatchDialog({ products }: NewBatchDialogProps) {
                 type="date"
                 value={formData.start_date}
                 onChange={(e) => setFormData({ ...formData, start_date: e.target.value })}
+                className="glass-input"
               />
             </div>
             <div className="grid gap-2">
@@ -137,6 +139,7 @@ export function NewBatchDialog({ products }: NewBatchDialogProps) {
                 placeholder="Enter any notes..."
                 value={formData.notes}
                 onChange={(e) => setFormData({ ...formData, notes: e.target.value })}
+                className="glass-input min-h-[80px]"
               />
             </div>
           </div>

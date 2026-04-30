@@ -106,6 +106,7 @@ export function BatchActions({ batch }: BatchActionsProps) {
                 onChange={(e) => setQuantityProduced(e.target.value)}
                 min="1"
                 max={batch.quantity_planned - batch.quantity_produced}
+                className="glass-input"
               />
               <Button 
                 onClick={handleUpdateProduction} 

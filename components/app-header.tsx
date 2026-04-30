@@ -11,7 +11,7 @@ interface AppHeaderProps {
 
 export function AppHeader({ title, description }: AppHeaderProps) {
   return (
-    <header className="sticky top-0 z-30 flex h-16 items-center justify-between border-b border-border bg-background/95 px-6 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <header className="sticky top-0 z-30 flex h-16 items-center justify-between border-b border-border/30 bg-background/60 px-6 backdrop-blur-xl">
       <div>
         <h1 className="text-xl font-semibold text-foreground">{title}</h1>
         {description && (
@@ -26,7 +26,7 @@ export function AppHeader({ title, description }: AppHeaderProps) {
           <Input
             type="search"
             placeholder="Search..."
-            className="w-64 pl-9"
+            className="w-64 pl-9 glass-input"
           />
         </div>
 

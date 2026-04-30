@@ -136,6 +136,7 @@ export function NewBOMDialog({ products, rawMaterials }: NewBOMDialogProps) {
                 onChange={(e) => setFormData({ ...formData, quantity_required: e.target.value })}
                 required
                 min="0.001"
+                className="glass-input"
               />
             </div>
           </div>

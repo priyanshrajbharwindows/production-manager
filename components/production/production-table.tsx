@@ -13,13 +13,15 @@ import {
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Progress } from "@/components/ui/progress"
-import { Eye, MoreHorizontal } from "lucide-react"
+import { Eye, MoreHorizontal, Pencil } from "lucide-react"
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
+  DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
+import { EditBatchDialog } from "./edit-batch-dialog"
 import type { ProductionBatch } from "@/lib/types"
 
 interface ProductionTableProps {
@@ -27,7 +29,7 @@ interface ProductionTableProps {
 }
 
 const statusColors: Record<string, string> = {
-  planned: "bg-muted text-muted-foreground",
+  planned: "bg-muted/50 text-muted-foreground border-muted-foreground/30",
   in_progress: "bg-warning/20 text-warning-foreground border-warning/30",
   completed: "bg-success/20 text-success border-success/30",
   cancelled: "bg-destructive/20 text-destructive border-destructive/30",
@@ -35,10 +37,10 @@ const statusColors: Record<string, string> = {
 
 export function ProductionTable({ batches }: ProductionTableProps) {
   return (
-    <div className="rounded-lg border border-border/50 bg-card">
+    <div className="rounded-xl glass-table overflow-hidden">
       <Table>
         <TableHeader>
-          <TableRow className="hover:bg-transparent">
+          <TableRow className="hover:bg-transparent border-border/30">
             <TableHead>Batch Number</TableHead>
             <TableHead>Product</TableHead>
             <TableHead>Progress</TableHead>
@@ -100,12 +102,21 @@ export function ProductionTable({ batches }: ProductionTableProps) {
                           <MoreHorizontal className="h-4 w-4" />
                         </Button>
                       </DropdownMenuTrigger>
-                      <DropdownMenuContent align="end">
+                      <DropdownMenuContent align="end" className="glass-dialog">
                         <DropdownMenuItem asChild>
                           <Link href={`/production/${batch.id}`} className="flex items-center gap-2">
                             <Eye className="h-4 w-4" /> View Details
                           </Link>
                         </DropdownMenuItem>
+                        <DropdownMenuSeparator />
+                        <EditBatchDialog 
+                          batch={batch} 
+                          trigger={
+                            <button className="relative flex cursor-default select-none items-center gap-2 rounded-sm px-2 py-1.5 text-sm outline-none transition-colors hover:bg-accent hover:text-accent-foreground w-full">
+                              <Pencil className="h-4 w-4" /> Edit Batch
+                            </button>
+                          }
+                        />
                       </DropdownMenuContent>
                     </DropdownMenu>
                   </TableCell>
